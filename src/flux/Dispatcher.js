@@ -1,11 +1,13 @@
 export class Dispatcher {
-    constructor(){
+    constructor() {
         this.__listeners = [];
     }
-    dispatch(action){
-        this.__listeners.forEach(listener=>listener(action));
+
+    dispatch(action) {
+        this.__listeners.forEach(listener => listener(action));
     }
-    register(listener){
+
+    register(listener) {
         this.__listeners.push(listener);
     }
 }
