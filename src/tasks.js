@@ -105,6 +105,11 @@ const TaskComponent = ({content, completed, id}) => (
     </section>`
 );
 
+document.forms.undo.addEventListener('submit', (e) => {
+    e.preventDefault();
+    taskStore.revertLastState();
+});
+
 const render = () => {
     const taskSection = document.getElementById('tasks');
     const state = taskStore.getState();
